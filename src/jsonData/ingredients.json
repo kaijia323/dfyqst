@@ -1,0 +1,34 @@
+[
+  {
+    "name": "海苔",
+    "describe": "不知道从哪里流入的外来食材，还挺常见",
+    "image": "https://s11.ax1x.com/2024/01/10/pF90CNT.png",
+    "level": 1,
+    "money": 3,
+    "tag": ["鲜", "素"]
+  },
+  {
+    "name": "八目鳗",
+    "describe": "一种洄游性海鱼但却在幻想乡的河流湖泊随处可见，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF903gH.png",
+    "level": 2,
+    "money": 14,
+    "tag": ["水产", "招牌", "鲜"]
+  },
+  {
+    "name": "牛肉",
+    "describe": "人里圈养的肉牛肉，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF90JKA.png",
+    "level": 2,
+    "money": 15,
+    "tag": ["肉"]
+  },
+  {
+    "name": "洋葱",
+    "describe": "人里农田产的洋葱，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF90d58.png",
+    "level": 2,
+    "money": 12,
+    "tag": ["素", "鲜"]
+  }
+]
