@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Document, Menu as IconMenu, Setting } from "@element-plus/icons-vue";
+import { Menu as IconMenu } from "@element-plus/icons-vue";
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
@@ -13,22 +13,15 @@ const handleClose = (key: string, keyPath: string[]) => {
     <el-container>
       <el-aside width="200px">
         <el-menu
-          default-active="2"
+          default-active="xiyouguke"
           class="el-menu-vertical-demo"
+          router
           @open="handleOpen"
           @close="handleClose"
         >
-          <el-menu-item index="2">
+          <el-menu-item index="xiyouguke">
             <el-icon><icon-menu /></el-icon>
-            <span>Navigator Two</span>
-          </el-menu-item>
-          <el-menu-item index="3" disabled>
-            <el-icon><document /></el-icon>
-            <span>Navigator Three</span>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <el-icon><setting /></el-icon>
-            <span>Navigator Four</span>
+            <span>稀有顾客</span>
           </el-menu-item>
         </el-menu>
       </el-aside>

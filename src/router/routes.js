@@ -2,12 +2,12 @@ const routes = [
   {
     path: "/",
     component: () => import("@/layout/index.vue"),
-    redirect: "/home",
+    redirect: "/xiyouguke",
     children: [
       {
-        path: "/home",
-        name: "home",
-        component: () => import("@/views/home/index.vue"),
+        path: "/xiyouguke",
+        name: "xiyouguke",
+        component: () => import("@/views/xiyouguke/index.vue"),
       },
     ],
   },
