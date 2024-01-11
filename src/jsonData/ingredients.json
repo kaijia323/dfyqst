@@ -5,7 +5,8 @@
     "image": "https://s11.ax1x.com/2024/01/10/pF90CNT.png",
     "level": 1,
     "money": 3,
-    "tag": ["鲜", "素"]
+    "tag": ["鲜", "素"],
+    "type": "蔬菜"
   },
   {
     "name": "八目鳗",
@@ -13,7 +14,8 @@
     "image": "https://s11.ax1x.com/2024/01/11/pF903gH.png",
     "level": 2,
     "money": 14,
-    "tag": ["水产", "招牌", "鲜"]
+    "tag": ["水产", "招牌", "鲜"],
+    "type": "海鲜"
   },
   {
     "name": "牛肉",
@@ -21,7 +23,8 @@
     "image": "https://s11.ax1x.com/2024/01/11/pF90JKA.png",
     "level": 2,
     "money": 15,
-    "tag": ["肉"]
+    "tag": ["肉"],
+    "type": "肉类"
   },
   {
     "name": "洋葱",
@@ -29,6 +32,34 @@
     "image": "https://s11.ax1x.com/2024/01/11/pF90d58.png",
     "level": 2,
     "money": 12,
-    "tag": ["素", "鲜"]
+    "tag": ["素", "鲜"],
+    "type": "蔬菜"
+  },
+  {
+    "name": "南瓜",
+    "describe": "人里农田产的南瓜，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF9WSts.png",
+    "level": 2,
+    "money": 14,
+    "tag": ["饱腹", "素"],
+    "type": "蔬菜"
+  },
+  {
+    "name": "萝卜",
+    "describe": "人里农田产的萝卜，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF9WO81.png",
+    "level": 2,
+    "money": 16,
+    "tag": ["素", "下酒"],
+    "type": "蔬菜"
+  },
+  {
+    "name": "鳟鱼",
+    "describe": "栖息于淡水中的冷水鱼，较为常见",
+    "image": "https://s11.ax1x.com/2024/01/11/pF9WzDO.png",
+    "level": 1,
+    "money": 8,
+    "tag": ["鲜", "水产"],
+    "type": "海鲜"
   }
 ]

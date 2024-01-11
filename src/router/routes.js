@@ -9,6 +9,11 @@ const routes = [
         name: "xiyouguke",
         component: () => import("@/views/xiyouguke/index.vue"),
       },
+      {
+        path: "/shicai",
+        name: "shicai",
+        component: () => import("@/views/shicai/index.vue"),
+      },
     ],
   },
 ];
