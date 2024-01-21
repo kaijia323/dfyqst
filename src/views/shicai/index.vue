@@ -32,6 +32,7 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
 <template>
   <div class="shicai">
     <el-table border :data="ingredients" style="width: 100%">
+      <el-table-column type="index" width="60px" label="序号"></el-table-column>
       <el-table-column
         v-for="column in columns"
         :key="column.prop"
