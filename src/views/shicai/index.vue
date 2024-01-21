@@ -43,7 +43,7 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
           <el-avatar shape="square" :src="row.image" />
         </template>
         <template v-if="column.prop === 'tag'" #default="{ row }">
-          <el-space>
+          <el-space wrap>
             <el-tag
               :type="(sample(tagTypes) as any)"
               v-for="tag in row.tag"
