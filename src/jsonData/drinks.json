@@ -1,0 +1,10 @@
+[
+  {
+    "name": "绿茶",
+    "describe": "最普通的饮料，给一滴酒都不能沾的弱小妖怪准备的",
+    "image": "https://i.miji.bid/2024/01/21/c533ac044fcf3fe0e4e70cdfc4cd56af.png",
+    "level": 1,
+    "money": 1,
+    "tag": ["无酒精"]
+  }
+]
