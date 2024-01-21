@@ -1,0 +1,14 @@
+[
+  {
+    "name": "海鲜味噜汤",
+    "describe": "居酒屋常见的快手汤凳，来历不明却随处可见的海带在幻想乡出现之初，有人好奇水煮了一下，结果意外地发现有种异样的鲜味，从此便在幻想乡流行开了。",
+    "image": "https://i.miji.bid/2024/01/21/c533ac044fcf3fe0e4e70cdfc4cd56af.png",
+    "level": 1,
+    "money": 8,
+    "tags": ["实惠", "素", "家常", "汤囊"],
+    "excludeTags": ["重油"],
+    "needIngredients": ["海苔"],
+    "needCook": "煮锅",
+    "cookerTime": 4.2
+  }
+]

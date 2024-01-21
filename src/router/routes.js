@@ -28,6 +28,14 @@ const routes = [
           title: "酒水",
         },
       },
+      {
+        path: "/shipu",
+        name: "shipu",
+        component: () => import("@/views/shipu/index.vue"),
+        meta: {
+          title: "食谱",
+        },
+      },
     ],
   },
 ];

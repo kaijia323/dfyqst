@@ -31,6 +31,10 @@ const handleClose = (key: string, keyPath: string[]) => {
             <el-icon><icon-menu /></el-icon>
             <span>酒水</span>
           </el-menu-item>
+          <el-menu-item index="shipu">
+            <el-icon><icon-menu /></el-icon>
+            <span>食谱</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
       <el-main><router-view></router-view></el-main>

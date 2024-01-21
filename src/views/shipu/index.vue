@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import ingredients from "@/jsonData/ingredients.json";
+import recipes from "@/jsonData/recipes.json";
 import { sample } from "lodash-es";
 
-type TIngredients = (typeof ingredients)[number];
+type TRecipes = (typeof recipes)[number];
 type IMapProp = {
-  [key in keyof TIngredients]: string;
+  [key in keyof TRecipes]: string;
 };
 const mapProps: IMapProp = {
   name: "名称",
@@ -13,7 +13,10 @@ const mapProps: IMapProp = {
   level: "等级",
   money: "价格",
   tags: "标签",
-  type: "类型",
+  excludeTags: "不能包含的食材标签",
+  needIngredients: "需要的食材",
+  needCook: "需要的厨具",
+  cookerTime: "烹饪时间",
 };
 const tagTypes = [
   "success",
@@ -24,14 +27,14 @@ const tagTypes = [
 ];
 
 const columns = Reflect.ownKeys(mapProps).map(key => ({
-  prop: key as keyof TIngredients,
-  label: mapProps[key as keyof TIngredients],
+  prop: key as keyof TRecipes,
+  label: mapProps[key as keyof TRecipes],
 }));
 </script>
 
 <template>
-  <div class="shicai">
-    <el-table border :data="ingredients" style="width: 100%">
+  <div class="shipu">
+    <el-table border :data="recipes" style="width: 100%">
       <el-table-column type="index" width="60px" label="序号"></el-table-column>
       <el-table-column
         v-for="column in columns"
@@ -50,6 +53,13 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
               :key="tag"
               >{{ tag }}</el-tag
             >
+          </el-space>
+        </template>
+        <template v-if="column.prop === 'excludeTags'" #default="{ row }">
+          <el-space wrap>
+            <el-tag type="danger" v-for="tag in row.excludeTags" :key="tag">{{
+              tag
+            }}</el-tag>
           </el-space>
         </template>
       </el-table-column>

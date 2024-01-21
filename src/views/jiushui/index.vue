@@ -12,7 +12,7 @@ const mapProps: IMapProp = {
   describe: "描述",
   level: "等级",
   money: "价格",
-  tag: "标签",
+  tags: "标签",
 };
 const tagTypes = [
   "success",
@@ -29,7 +29,7 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
 </script>
 
 <template>
-  <div class="shicai">
+  <div class="jiushui">
     <el-table border :data="drinks" style="width: 100%">
       <el-table-column type="index" width="60px" label="序号"></el-table-column>
       <el-table-column
@@ -41,11 +41,11 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
         <template v-if="column.prop === 'image'" #default="{ row }">
           <el-avatar shape="square" :src="row.image" />
         </template>
-        <template v-if="column.prop === 'tag'" #default="{ row }">
+        <template v-if="column.prop === 'tags'" #default="{ row }">
           <el-space wrap>
             <el-tag
               :type="(sample(tagTypes) as any)"
-              v-for="tag in row.tag"
+              v-for="tag in row.tags"
               :key="tag"
               >{{ tag }}</el-tag
             >
