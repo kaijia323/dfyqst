@@ -1,14 +1,46 @@
 <script lang="ts" setup>
 import customerList from "@/jsonData/customerList.json";
+import recipes from "@/jsonData/recipes.json";
 import { onMounted } from "vue";
 import { ref } from "vue";
 
-type TCustomer = (typeof customerList)[number];
+type TRecipe = (typeof recipes)[number];
+type TCustomer = Omit<(typeof customerList)[number], "recipes"> & {
+  recipes: TRecipe[];
+};
+
 const chooseCustomers = ref<TCustomer[]>([]);
 
 onMounted(() => {
-  chooseCustomers.value = [...customerList];
+  chooseCustomers.value = [...customerList].map(item => {
+    return {
+      ...item,
+      recipes: filterRecipes(item),
+    };
+  });
 });
+
+// 从食谱 tags 中过滤顾客讨厌的 tag 且包含顾客喜好的 tag
+const filterRecipes = (customer: TCustomer): TRecipe[] => {
+  return (
+    recipes
+      .filter(
+        recipe =>
+          !recipe.tags.some(tag => customer.hates.includes(tag)) &&
+          recipe.tags.some(tag => customer.favorites.includes(tag))
+      )
+      // 根据顾客喜好的 tag 数量排序
+      .toSorted((a, b) => {
+        const length = a.tags.filter(tag =>
+          customer.favorites.includes(tag)
+        ).length;
+        const length2 = b.tags.filter(tag =>
+          customer.favorites.includes(tag)
+        ).length;
+        return length2 - length;
+      })
+  );
+};
 
 const handleChooseCustomer = (customer: TCustomer) => {
   const index = chooseCustomers.value.findIndex(
@@ -17,7 +49,10 @@ const handleChooseCustomer = (customer: TCustomer) => {
   if (index > -1) {
     chooseCustomers.value.splice(index, 1);
   } else {
-    chooseCustomers.value.push(customer);
+    chooseCustomers.value.push({
+      ...customer,
+      recipes: filterRecipes(customer),
+    });
   }
 };
 </script>
@@ -85,10 +120,27 @@ const handleChooseCustomer = (customer: TCustomer) => {
         <div class="value">{{ customer.money.join(" - ") }}</div>
       </el-space>
       <br />
-      <el-space class="item">
-        <div class="label">食谱:</div>
-        <div class="value">TODO</div>
-      </el-space>
+      <div class="item">
+        <div class="label" style="margin-bottom: 8px">食谱</div>
+        <div class="value">
+          <div
+            v-for="recipe in customer.recipes"
+            :key="recipe.name"
+            class="recipe"
+          >
+            <el-space>
+              <span>{{ recipe.name }}</span>
+              <el-tag
+                :type="customer.favorites.includes(t) ? 'primary' : 'info'"
+                v-for="t in recipe.tags"
+                :key="t"
+              >
+                {{ t }}
+              </el-tag>
+            </el-space>
+          </div>
+        </div>
+      </div>
     </div>
   </template>
 </template>
@@ -128,6 +180,10 @@ const handleChooseCustomer = (customer: TCustomer) => {
   border-radius: 8px;
   .item {
     margin-bottom: 16px;
+
+    .recipe {
+      margin-bottom: 16px;
+    }
   }
 }
 </style>
