@@ -2,7 +2,7 @@
   {
     "name": "海苔",
     "describe": "不知道从哪里流入的外来食材，还挺常见",
-    "image": "https://s11.ax1x.com/2024/01/10/pF90CNT.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/海苔.png",
     "level": 1,
     "money": 3,
     "tags": ["鲜", "素"],
@@ -11,7 +11,7 @@
   {
     "name": "八目鳗",
     "describe": "一种洄游性海鱼但却在幻想乡的河流湖泊随处可见，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF903gH.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/八目鳗.png",
     "level": 2,
     "money": 14,
     "tags": ["水产", "招牌", "鲜"],
@@ -20,7 +20,7 @@
   {
     "name": "牛肉",
     "describe": "人里圈养的肉牛肉，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF90JKA.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/牛肉.png",
     "level": 2,
     "money": 15,
     "tags": ["肉"],
@@ -29,7 +29,7 @@
   {
     "name": "洋葱",
     "describe": "人里农田产的洋葱，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF90d58.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/洋葱.png",
     "level": 2,
     "money": 12,
     "tags": ["素", "鲜"],
@@ -38,7 +38,7 @@
   {
     "name": "南瓜",
     "describe": "人里农田产的南瓜，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF9WSts.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/南瓜.png",
     "level": 2,
     "money": 14,
     "tags": ["饱腹", "素"],
@@ -47,7 +47,7 @@
   {
     "name": "萝卜",
     "describe": "人里农田产的萝卜，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF9WO81.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/萝卜.png",
     "level": 2,
     "money": 16,
     "tags": ["素", "下酒"],
@@ -56,7 +56,7 @@
   {
     "name": "鳟鱼",
     "describe": "栖息于淡水中的冷水鱼，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/11/pF9WzDO.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/鳟鱼.png",
     "level": 1,
     "money": 8,
     "tags": ["鲜", "水产"],
@@ -65,7 +65,7 @@
   {
     "name": "猪肉",
     "describe": "人里圈养的家猪肉，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV1Qbt.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/猪肉.png",
     "level": 1,
     "money": 10,
     "tags": ["肉"],
@@ -74,7 +74,7 @@
   {
     "name": "露水",
     "describe": "清晨采回来的露水，有点珍贵",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV1WrR.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/露水.png",
     "level": 1,
     "money": 10,
     "tags": ["清淡"],
@@ -83,7 +83,7 @@
   {
     "name": "蜂蜜",
     "describe": "能从树上蜂巢采到的野生蜂蜜，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV1TPO.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蜂蜜.png",
     "level": 2,
     "money": 15,
     "tags": ["甜"],
@@ -92,7 +92,7 @@
   {
     "name": "蝉蜕",
     "describe": "在树干上常常可以采集的昆虫外壳，较为常见",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV3PzQ.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蝉蜕.png",
     "level": 1,
     "money": 5,
     "tags": ["猎奇"],
@@ -101,7 +101,7 @@
   {
     "name": "野猪肉",
     "describe": "猎人们在山间猎回来的野猪肉，充满野性",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV3eoV.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/野猪肉.png",
     "level": 3,
     "money": 25,
     "tags": ["肉"],
@@ -110,7 +110,7 @@
   {
     "name": "黑毛猪肉",
     "describe": "在高海拔深山中圈养的黑毛猪肉，非常高级",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV3uJU.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/黑毛猪肉.png",
     "level": 4,
     "money": 35,
     "tags": ["肉", "传说", "山珍"],
@@ -119,7 +119,7 @@
   {
     "name": "土豆",
     "describe": "随处可见的那种普通土豆",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV3KWF.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/土豆.png",
     "level": 2,
     "money": 10,
     "tags": ["素", "家常"],
@@ -128,7 +128,7 @@
   {
     "name": "鹿肉",
     "describe": "猎人们在山间猎回来的鹿肉，有点珍贵",
-    "image": "https://s11.ax1x.com/2024/01/21/pFV3lQJ.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/鹿肉.png",
     "level": 2,
     "money": 20,
     "tags": ["肉"],
@@ -137,7 +137,7 @@
   {
     "name": "蘑菇",
     "describe": "从魔法之森采回来的品相良好的蘑菇，无法人工种植，非常珍贵",
-    "image": "https://i.miji.bid/2024/01/21/9e5717c9b1fda70b5cb607aa5bb1e863.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蘑菇.png",
     "level": 3,
     "money": 18,
     "tags": ["素", "鲜", "菌类"],
@@ -146,7 +146,7 @@
   {
     "name": "辣椒",
     "describe": "用于增加辣味的食材，评价非常两极",
-    "image": "https://i.miji.bid/2024/01/21/1692c4a9b00ed98e25123651d55479b1.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/辣椒.png",
     "level": 1,
     "money": 2,
     "tags": ["辣"],
@@ -155,7 +155,7 @@
   {
     "name": "竹笋",
     "describe": "从野外采回来的竹笋，较为常见",
-    "image": "https://i.miji.bid/2024/01/21/e40d522262e9d166689c77242d54d0ef.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/竹笋.png",
     "level": 3,
     "money": 40,
     "tags": ["素", "清淡"],
@@ -164,7 +164,7 @@
   {
     "name": "三文鱼",
     "describe": "一种高度洄游海鱼但在幻想乡的河流湖泊可见，有点珍贵",
-    "image": "https://i.miji.bid/2024/01/21/bf13522659c6ce412d84f5e95f0cb45a.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/三文鱼.png",
     "level": 3,
     "money": 24,
     "tags": ["水产", "高级", "鲜"],
@@ -173,7 +173,7 @@
   {
     "name": "金枪鱼",
     "describe": "一种大洋性洄游海鱼但在幻想乡的河流湖泊可见，有点珍贵",
-    "image": "https://i.miji.bid/2024/01/21/f2be7899abb0ad8a5f3ab9af6257e417.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/金枪鱼.png",
     "level": 3,
     "money": 30,
     "tags": ["水产", "高级", "鲜"],
@@ -182,7 +182,7 @@
   {
     "name": "河豚",
     "describe": "高级水产品，但体内含毒素，需小心处理。",
-    "image": "https://i.miji.bid/2024/01/21/e0d4a223f09746b6492b3390e82b5808.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/河豚.png",
     "level": 5,
     "money": 42,
     "tags": ["水产", "海味", "鲜"],
@@ -191,7 +191,7 @@
   {
     "name": "虾",
     "describe": "分布在雾之湖和玄武泽的淡水虾，较为常见",
-    "image": "https://i.miji.bid/2024/01/21/019bd5448a713171e8be6e3401ccb0a6.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/虾.png",
     "level": 2,
     "money": 30,
     "tags": ["水产", "鲜"],
@@ -200,7 +200,7 @@
   {
     "name": "桃子",
     "describe": "桃子树的果实，较为常见",
-    "image": "https://i.miji.bid/2024/01/21/db78edb184503834231b9618b4c6d9bc.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/桃子.png",
     "level": 3,
     "money": 10,
     "tags": ["甜", "果味"],
@@ -209,7 +209,7 @@
   {
     "name": "竹子",
     "describe": "鲜翠欲滴的迷途竹林鲜切竹子，散发着清冽的竹香",
-    "image": "https://i.miji.bid/2024/01/21/37de2aa6575258f28a909e15044de13b.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/竹子.png",
     "level": 3,
     "money": 15,
     "tags": ["适合拍照"],
@@ -218,7 +218,7 @@
   {
     "name": "白果",
     "describe": "白果树的果实，较为常见",
-    "image": "https://i.miji.bid/2024/01/21/b45e627ffc3777a995eeab0b74d40c51.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/白果.png",
     "level": 2,
     "money": 7,
     "tags": ["适合拍照"],
@@ -227,7 +227,7 @@
   {
     "name": "冰块",
     "describe": "水的固体形态，帮助食材保温，晶莹剔透",
-    "image": "https://i.miji.bid/2024/01/21/315b4bb5f8c71330d41601b837316654.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/冰块.png",
     "level": 1,
     "money": 2,
     "tags": ["凉爽"],
@@ -236,7 +236,7 @@
   {
     "name": "糯米",
     "describe": "很有粘性的米，制作出来的料理或绵软适口，或鲜嫩弹牙",
-    "image": "https://i.miji.bid/2024/01/21/91c7a98fa753fb8e06f26e7bd06f37f8.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/糯米.png",
     "level": 3,
     "money": 15,
     "tags": [],
@@ -245,7 +245,7 @@
   {
     "name": "幻昙华",
     "describe": "生长在沼泽中的奇迹之花，非常珍贵",
-    "image": "https://i.miji.bid/2024/01/21/e811a0f1060b75cff0e041366d7cb97e.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/幻昙华.png",
     "level": 5,
     "money": 70,
     "tags": ["传说", "梦幻", "不可思议", "高级"],
@@ -254,7 +254,7 @@
   {
     "name": "松露",
     "describe": "从魔法之森采回来的品相良好的松露，无法人工种植，非常珍贵",
-    "image": "https://i.miji.bid/2024/01/21/0355520672b3b6f40a9d8be260f473e4.png",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/松露.png",
     "level": 5,
     "money": 50,
     "tags": ["素", "传说", "山珍", "菌类", "高级", "鲜"],
