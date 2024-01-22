@@ -2,12 +2,12 @@ const routes = [
   {
     path: "/",
     component: () => import("@/layout/index.vue"),
-    redirect: "/xiyouguke",
+    redirect: "/guke",
     children: [
       {
-        path: "/xiyouguke",
-        name: "xiyouguke",
-        component: () => import("@/views/xiyouguke/index.vue"),
+        path: "/guke",
+        name: "guke",
+        component: () => import("@/views/guke/index.vue"),
         meta: {
           title: "稀有顾客",
         },

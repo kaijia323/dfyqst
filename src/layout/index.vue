@@ -13,13 +13,13 @@ const handleClose = (key: string, keyPath: string[]) => {
     <el-container>
       <el-aside width="200px">
         <el-menu
-          default-active="xiyouguke"
+          default-active="guke"
           class="el-menu-vertical-demo"
           router
           @open="handleOpen"
           @close="handleClose"
         >
-          <el-menu-item index="xiyouguke">
+          <el-menu-item index="guke">
             <el-icon><icon-menu /></el-icon>
             <span>稀有顾客</span>
           </el-menu-item>

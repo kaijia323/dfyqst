@@ -18,7 +18,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
 </script>
 
 <template>
-  <div class="xiyouguke">
+  <div class="guke">
     <el-space>
       <div
         :class="{
@@ -37,7 +37,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
 </template>
 
 <style lang="scss" scoped>
-.xiyouguke {
+.guke {
   display: flex;
   flex-wrap: wrap;
   .customer {
