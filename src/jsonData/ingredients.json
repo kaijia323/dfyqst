@@ -4,7 +4,7 @@
     "describe": "不知道从哪里流入的外来食材，还挺常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/海苔.png",
     "level": 1,
-    "money": 3,
+    "price": 3,
     "tags": ["鲜", "素"],
     "type": "蔬菜"
   },
@@ -13,7 +13,7 @@
     "describe": "一种洄游性海鱼但却在幻想乡的河流湖泊随处可见，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/八目鳗.png",
     "level": 2,
-    "money": 14,
+    "price": 14,
     "tags": ["水产", "招牌", "鲜"],
     "type": "海鲜"
   },
@@ -22,7 +22,7 @@
     "describe": "人里圈养的肉牛肉，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/牛肉.png",
     "level": 2,
-    "money": 15,
+    "price": 15,
     "tags": ["肉"],
     "type": "肉类"
   },
@@ -31,7 +31,7 @@
     "describe": "人里农田产的洋葱，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/洋葱.png",
     "level": 2,
-    "money": 12,
+    "price": 12,
     "tags": ["素", "鲜"],
     "type": "蔬菜"
   },
@@ -40,7 +40,7 @@
     "describe": "人里农田产的南瓜，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/南瓜.png",
     "level": 2,
-    "money": 14,
+    "price": 14,
     "tags": ["饱腹", "素"],
     "type": "蔬菜"
   },
@@ -49,7 +49,7 @@
     "describe": "人里农田产的萝卜，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/萝卜.png",
     "level": 2,
-    "money": 16,
+    "price": 16,
     "tags": ["素", "下酒"],
     "type": "蔬菜"
   },
@@ -58,7 +58,7 @@
     "describe": "栖息于淡水中的冷水鱼，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/鳟鱼.png",
     "level": 1,
-    "money": 8,
+    "price": 8,
     "tags": ["鲜", "水产"],
     "type": "海鲜"
   },
@@ -67,7 +67,7 @@
     "describe": "人里圈养的家猪肉，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/猪肉.png",
     "level": 1,
-    "money": 10,
+    "price": 10,
     "tags": ["肉"],
     "type": "肉类"
   },
@@ -76,7 +76,7 @@
     "describe": "清晨采回来的露水，有点珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/露水.png",
     "level": 1,
-    "money": 10,
+    "price": 10,
     "tags": ["清淡"],
     "type": "其他"
   },
@@ -85,7 +85,7 @@
     "describe": "能从树上蜂巢采到的野生蜂蜜，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蜂蜜.png",
     "level": 2,
-    "money": 15,
+    "price": 15,
     "tags": ["甜"],
     "type": "其他"
   },
@@ -94,7 +94,7 @@
     "describe": "在树干上常常可以采集的昆虫外壳，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蝉蜕.png",
     "level": 1,
-    "money": 5,
+    "price": 5,
     "tags": ["猎奇"],
     "type": "其他"
   },
@@ -103,7 +103,7 @@
     "describe": "猎人们在山间猎回来的野猪肉，充满野性",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/野猪肉.png",
     "level": 3,
-    "money": 25,
+    "price": 25,
     "tags": ["肉"],
     "type": "肉类"
   },
@@ -112,7 +112,7 @@
     "describe": "在高海拔深山中圈养的黑毛猪肉，非常高级",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/黑毛猪肉.png",
     "level": 4,
-    "money": 35,
+    "price": 35,
     "tags": ["肉", "传说", "山珍"],
     "type": "肉类"
   },
@@ -121,7 +121,7 @@
     "describe": "随处可见的那种普通土豆",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/土豆.png",
     "level": 2,
-    "money": 10,
+    "price": 10,
     "tags": ["素", "家常"],
     "type": "蔬菜"
   },
@@ -130,7 +130,7 @@
     "describe": "猎人们在山间猎回来的鹿肉，有点珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/鹿肉.png",
     "level": 2,
-    "money": 20,
+    "price": 20,
     "tags": ["肉"],
     "type": "肉类"
   },
@@ -139,7 +139,7 @@
     "describe": "从魔法之森采回来的品相良好的蘑菇，无法人工种植，非常珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/蘑菇.png",
     "level": 3,
-    "money": 18,
+    "price": 18,
     "tags": ["素", "鲜", "菌类"],
     "type": "蔬菜"
   },
@@ -148,7 +148,7 @@
     "describe": "用于增加辣味的食材，评价非常两极",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/辣椒.png",
     "level": 1,
-    "money": 2,
+    "price": 2,
     "tags": ["辣"],
     "type": "其他"
   },
@@ -157,7 +157,7 @@
     "describe": "从野外采回来的竹笋，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/竹笋.png",
     "level": 3,
-    "money": 40,
+    "price": 40,
     "tags": ["素", "清淡"],
     "type": "蔬菜"
   },
@@ -166,7 +166,7 @@
     "describe": "一种高度洄游海鱼但在幻想乡的河流湖泊可见，有点珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/三文鱼.png",
     "level": 3,
-    "money": 24,
+    "price": 24,
     "tags": ["水产", "高级", "鲜"],
     "type": "海鲜"
   },
@@ -175,7 +175,7 @@
     "describe": "一种大洋性洄游海鱼但在幻想乡的河流湖泊可见，有点珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/金枪鱼.png",
     "level": 3,
-    "money": 30,
+    "price": 30,
     "tags": ["水产", "高级", "鲜"],
     "type": "海鲜"
   },
@@ -184,7 +184,7 @@
     "describe": "高级水产品，但体内含毒素，需小心处理。",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/河豚.png",
     "level": 5,
-    "money": 42,
+    "price": 42,
     "tags": ["水产", "海味", "鲜"],
     "type": "海鲜"
   },
@@ -193,7 +193,7 @@
     "describe": "分布在雾之湖和玄武泽的淡水虾，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/虾.png",
     "level": 2,
-    "money": 30,
+    "price": 30,
     "tags": ["水产", "鲜"],
     "type": "海鲜"
   },
@@ -202,7 +202,7 @@
     "describe": "桃子树的果实，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/桃子.png",
     "level": 3,
-    "money": 10,
+    "price": 10,
     "tags": ["甜", "果味"],
     "type": "其他"
   },
@@ -211,7 +211,7 @@
     "describe": "鲜翠欲滴的迷途竹林鲜切竹子，散发着清冽的竹香",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/竹子.png",
     "level": 3,
-    "money": 15,
+    "price": 15,
     "tags": ["适合拍照"],
     "type": "其他"
   },
@@ -220,7 +220,7 @@
     "describe": "白果树的果实，较为常见",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/白果.png",
     "level": 2,
-    "money": 7,
+    "price": 7,
     "tags": ["适合拍照"],
     "type": "其他"
   },
@@ -229,7 +229,7 @@
     "describe": "水的固体形态，帮助食材保温，晶莹剔透",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/冰块.png",
     "level": 1,
-    "money": 2,
+    "price": 2,
     "tags": ["凉爽"],
     "type": "其他"
   },
@@ -238,7 +238,7 @@
     "describe": "很有粘性的米，制作出来的料理或绵软适口，或鲜嫩弹牙",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/糯米.png",
     "level": 3,
-    "money": 15,
+    "price": 15,
     "tags": [],
     "type": "其他"
   },
@@ -247,7 +247,7 @@
     "describe": "生长在沼泽中的奇迹之花，非常珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/幻昙华.png",
     "level": 5,
-    "money": 70,
+    "price": 70,
     "tags": ["传说", "梦幻", "不可思议", "高级"],
     "type": "其他"
   },
@@ -256,8 +256,26 @@
     "describe": "从魔法之森采回来的品相良好的松露，无法人工种植，非常珍贵",
     "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/松露.png",
     "level": 5,
-    "money": 50,
+    "price": 50,
     "tags": ["素", "传说", "山珍", "菌类", "高级", "鲜"],
     "type": "蔬菜"
+  },
+  {
+    "name": "豆腐",
+    "describe": "人里有卖的豆腐，较为常见",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/豆腐.png",
+    "level": 1,
+    "price": 8,
+    "tags": ["素", "家常", "清淡"],
+    "type": "蔬菜"
+  },
+  {
+    "name": "鸡蛋",
+    "describe": "人里供应的鸡蛋，较为常见",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/鸡蛋.png",
+    "level": 1,
+    "price": 0,
+    "tags": ["生"],
+    "type": "其他"
   }
 ]

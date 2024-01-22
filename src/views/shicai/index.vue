@@ -11,7 +11,7 @@ const mapProps: IMapProp = {
   image: "图片",
   describe: "描述",
   level: "等级",
-  money: "价格",
+  price: "价格",
   tags: "标签",
   type: "类型",
 };
