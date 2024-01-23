@@ -4,6 +4,7 @@ import recipes from "@/jsonData/recipes.json";
 import ingredients from "@/jsonData/ingredients.json";
 import { onMounted } from "vue";
 import { ref } from "vue";
+import { Sort } from "@element-plus/icons-vue";
 
 type TRecipe = (typeof recipes)[number];
 type TCustomer = Omit<(typeof customerList)[number], "recipes"> & {
@@ -128,6 +129,13 @@ const handleChooseCustomer = (customer: TCustomer) => {
         <el-avatar shape="square" :src="customer.avatar" />
         <div class="name">{{ customer.name }}</div>
       </div>
+    </el-space>
+  </div>
+
+  <div class="sort">
+    <el-space>
+      <span>价格</span>
+      <el-icon><Sort /></el-icon>
     </el-space>
   </div>
 
@@ -323,6 +331,15 @@ const handleChooseCustomer = (customer: TCustomer) => {
     &.active {
       border-color: var(--primary-color);
     }
+  }
+}
+.sort {
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: var(--primary-color);
   }
 }
 .customer-info {
