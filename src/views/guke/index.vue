@@ -28,6 +28,14 @@ onMounted(() => {
   }
 });
 
+// 根据顾客喜好的 tag 排序
+const toSortedTags = (tags: string[], customer: TCustomer): string[] => {
+  return tags.toSorted((a, b) => {
+    if (customer.favorites.includes(a)) return -1;
+    return 1;
+  });
+};
+
 // 从食谱 tags 中过滤顾客讨厌的 tag 且包含顾客喜好的 tag
 const filterRecipes = (customer: TCustomer): TRecipe[] => {
   return (
@@ -39,13 +47,12 @@ const filterRecipes = (customer: TCustomer): TRecipe[] => {
       )
       // 根据顾客喜好的 tag 数量排序
       .toSorted((a, b) => {
-        const length = a.tags.filter(tag =>
-          customer.favorites.includes(tag)
-        ).length;
-        const length2 = b.tags.filter(tag =>
-          customer.favorites.includes(tag)
-        ).length;
-        return length2 - length;
+        const aa = a.tags.filter(tag => customer.favorites.includes(tag));
+        const bb = b.tags.filter(tag => customer.favorites.includes(tag));
+        if (aa.length === bb.length) {
+          return a.price - b.price;
+        }
+        return bb.length - aa.length;
       })
   );
 };
@@ -169,106 +176,102 @@ const handleChooseCustomer = (customer: TCustomer) => {
           <div class="label">钱:</div>
           <div class="value">{{ customer.money.join(" - ") }}</div>
         </el-space>
-        <br />
-        <div class="item">
-          <div class="label" style="margin-bottom: 8px">食谱</div>
-          <div class="value">
-            <div
-              v-for="recipe in filterRecipes(customer)"
-              :key="recipe.name"
-              class="recipe"
-            >
+      </el-space>
+      <div class="item" style="margin-top: 8px">
+        <div class="label" style="margin-bottom: 8px">食谱</div>
+        <div class="value">
+          <div
+            v-for="recipe in filterRecipes(customer)"
+            :key="recipe.name"
+            class="recipe"
+          >
+            <el-space>
               <el-space>
-                <el-space>
-                  <el-avatar shape="square" :src="recipe.image"></el-avatar>
-                  <span>{{ recipe.name }}</span>
-                  <span>￥{{ recipe.price }}</span>
-                </el-space>
-                <div style="height: 8px"></div>
-                <!-- 食谱标签 -->
-                <el-space>
-                  <span>食谱 Tag:</span>
-                  <el-tag
-                    :type="customer.favorites.includes(t) ? '' : 'info'"
-                    v-for="t in recipe.tags"
-                    :key="t"
-                  >
-                    {{ t }}
-                  </el-tag>
-                </el-space>
-                <div style="height: 8px"></div>
-                <!-- 食谱不能包含的标签 -->
-                <el-space>
-                  <span>不能搭配的食材 Tag:</span>
-                  <el-tag
-                    type="danger"
-                    v-for="t in recipe.excludeTags"
-                    :key="t"
-                  >
-                    {{ t }}
-                  </el-tag>
-                  <span v-if="!recipe.excludeTags.length">无</span>
-                </el-space>
+                <el-avatar shape="square" :src="recipe.image"></el-avatar>
+                <span>{{ recipe.name }}</span>
+                <span>￥{{ recipe.price }}</span>
               </el-space>
               <div style="height: 8px"></div>
+              <!-- 食谱标签 -->
               <el-space>
-                <span>食材:</span>
-                <el-space>
-                  <div
-                    v-for="i in recipe.needIngredients"
-                    :key="i"
-                    class="need-ingredient"
-                  >
-                    <el-avatar
-                      :src="ingredients.find(item => item.name === i)?.image"
-                      shape="square"
-                      size="small"
-                    ></el-avatar>
-                    <span>{{ i }}</span>
-                  </div>
-                </el-space>
-                <span>厨具:</span>
-                <el-space>
-                  <!-- <el-avatar
+                <span>食谱 Tag:</span>
+                <el-tag
+                  :type="customer.favorites.includes(t) ? '' : 'info'"
+                  v-for="t in toSortedTags(recipe.tags, customer)"
+                  :key="t"
+                >
+                  {{ t }}
+                </el-tag>
+              </el-space>
+              <div style="height: 8px"></div>
+              <!-- 食谱不能包含的标签 -->
+              <el-space>
+                <span>不能搭配的食材 Tag:</span>
+                <el-tag type="danger" v-for="t in recipe.excludeTags" :key="t">
+                  {{ t }}
+                </el-tag>
+                <span v-if="!recipe.excludeTags.length">无</span>
+              </el-space>
+            </el-space>
+            <div style="height: 8px"></div>
+            <el-space>
+              <span>食材:</span>
+              <el-space>
+                <div
+                  v-for="i in recipe.needIngredients"
+                  :key="i"
+                  class="need-ingredient"
+                >
+                  <el-avatar
+                    :src="ingredients.find(item => item.name === i)?.image"
+                    shape="square"
+                    size="small"
+                  ></el-avatar>
+                  <span>{{ i }}</span>
+                </div>
+              </el-space>
+              <span>厨具:</span>
+              <el-space>
+                <!-- <el-avatar
                       :src="ingredients.find(item => item.name === i)?.image"
                       shape="square"
                       size="small"
                     ></el-avatar> -->
-                  <span>{{ recipe.needCook }}</span>
-                </el-space>
+                <span>{{ recipe.needCook }}</span>
               </el-space>
-              <div style="height: 8px"></div>
-              <el-space direction="vertical" alignment="start">
-                <span>可添加的食材</span>
-                <el-space wrap>
-                  <div
-                    v-for="i in cantAddIngredient(recipe, customer)"
-                    :key="i.name"
-                    class="need-ingredient"
-                  >
-                    <el-space>
-                      <el-avatar
-                        :src="i.image"
-                        shape="square"
-                        size="small"
-                      ></el-avatar>
-                      <span>{{ i.name }}</span>
-                      <span>￥{{ i.price }}</span>
-                      <el-tag
-                        :type="customer.favorites.includes(t) ? '' : 'info'"
-                        v-for="t in i.tags"
-                        :key="t"
-                      >
-                        {{ t }}
-                      </el-tag>
-                    </el-space>
-                  </div>
-                </el-space>
+            </el-space>
+            <div style="height: 8px"></div>
+            <el-space direction="vertical" alignment="start">
+              <span>可添加的食材</span>
+              <el-space wrap>
+                <div
+                  v-for="i in cantAddIngredient(recipe, customer)"
+                  :key="i.name"
+                  class="need-ingredient"
+                >
+                  <el-space>
+                    <el-avatar
+                      :src="i.image"
+                      shape="square"
+                      size="small"
+                    ></el-avatar>
+                    <span>{{ i.name }}</span>
+                    <span>￥{{ i.price }}</span>
+                    <el-tag
+                      :type="customer.favorites.includes(t) ? '' : 'info'"
+                      v-for="t in toSortedTags(i.tags, customer)"
+                      :key="t"
+                    >
+                      {{ t }}
+                    </el-tag>
+                  </el-space>
+                </div>
               </el-space>
-              <div style="height: 8px"></div>
-              <el-space direction="vertical" alignment="start">
-                <span>推荐添加食材</span>
-                <!-- <el-space wrap>
+            </el-space>
+            <div style="height: 8px"></div>
+            <el-space direction="vertical" alignment="start">
+              <span>推荐添加食材</span>
+              <!-- <el-space wrap>
                   <div
                     v-for="i in recommendAddIngredient(recipe, customer)"
                     :key="i.name"
@@ -287,11 +290,10 @@ const handleChooseCustomer = (customer: TCustomer) => {
                     </el-space>
                   </div>
                 </el-space> -->
-              </el-space>
-            </div>
+            </el-space>
           </div>
         </div>
-      </el-space>
+      </div>
     </div>
   </template>
 </template>
