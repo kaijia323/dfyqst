@@ -71,6 +71,7 @@ const cantAddIngredient = (
     .filter(
       ingredient =>
         !ingredient.tags.some(item => customer.hates.includes(item)) &&
+        !recipe.excludeTags.some(item => ingredient.tags.includes(item)) &&
         ingredient.tags.some(item => customer.favorites.includes(item)) &&
         ingredient.tags.every(
           item =>
