@@ -51,7 +51,7 @@ const filterRecipes = (customer: TCustomer): TRecipe[] => {
         const aa = a.tags.filter(tag => customer.favorites.includes(tag));
         const bb = b.tags.filter(tag => customer.favorites.includes(tag));
         if (aa.length === bb.length) {
-          return a.price - b.price;
+          return -(a.price - b.price);
         }
         return bb.length - aa.length;
       })
@@ -126,8 +126,10 @@ const handleChooseCustomer = (customer: TCustomer) => {
         :key="customer.name"
         @click="handleChooseCustomer(customer)"
       >
-        <el-avatar shape="square" :src="customer.avatar" />
-        <div class="name">{{ customer.name }}</div>
+        <el-space direction="vertical">
+          <el-avatar shape="square" :src="customer.avatar" />
+          <div class="name">{{ customer.name }}</div>
+        </el-space>
       </div>
     </el-space>
   </div>
@@ -193,7 +195,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
             :key="recipe.name"
             class="recipe"
           >
-            <el-space>
+            <el-space wrap>
               <el-space>
                 <el-avatar shape="square" :src="recipe.image"></el-avatar>
                 <span>{{ recipe.name }}</span>
@@ -201,7 +203,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
               </el-space>
               <div style="height: 8px"></div>
               <!-- 食谱标签 -->
-              <el-space>
+              <el-space wrap>
                 <span>食谱 Tag:</span>
                 <el-tag
                   :type="customer.favorites.includes(t) ? '' : 'info'"
@@ -316,8 +318,8 @@ const handleChooseCustomer = (customer: TCustomer) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 88px;
-    height: 88px;
+    width: 108px;
+    height: 108px;
     text-align: center;
     border: 1px solid #dcdfe6;
     border-radius: 4px;
