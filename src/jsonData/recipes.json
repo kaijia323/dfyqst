@@ -331,5 +331,29 @@
     "needIngredients": ["洋葱", "鳟鱼"],
     "needCook": "料理台",
     "cookerTime": 5.6
+  },
+  {
+    "name": "凉菜雕花",
+    "describe": "将鲜果蔬菜雕刻成鲜花的模样，虽则材料简单，但却非常考验刀工。",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食谱/凉菜雕花.png",
+    "level": 1,
+    "price": 20,
+    "tags": ["素", "清淡", "适合拍照", "凉爽"],
+    "excludeTags": ["肉", "灼热"],
+    "needIngredients": ["萝卜"],
+    "needCook": "料理台",
+    "cookerTime": 3.5
+  },
+  {
+    "name": "炒肉丝",
+    "describe": "以猪肉作为主要食材制作而成的家常菜，口味偏重。",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食谱/炒肉丝.png",
+    "level": 1,
+    "price": 15,
+    "tags": ["实惠", "肉", "家常", "重油", "下酒", "中华"],
+    "excludeTags": [],
+    "needIngredients": ["猪肉"],
+    "needCook": "油锅",
+    "cookerTime": 5.6
   }
 ]
