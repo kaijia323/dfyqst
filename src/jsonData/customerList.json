@@ -98,5 +98,25 @@
     "drinks": ["可加冰", "低酒精"],
     "money": [3000, 5000],
     "recipes": []
+  },
+  {
+    "name": "森近霖之助",
+    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/森近霖之助.png",
+    "address": ["人间之里"],
+    "favorites": ["流行·喜爱", "家常", "饱腹", "鲜"],
+    "hates": ["重油"],
+    "drinks": ["烧酒", "啤酒"],
+    "money": [250, 400],
+    "recipes": []
+  },
+  {
+    "name": "魂魄妖梦",
+    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/魂魄妖梦.png",
+    "address": [],
+    "favorites": ["传说", "和风"],
+    "hates": [],
+    "drinks": ["直饮"],
+    "money": [],
+    "recipes": []
   }
 ]
