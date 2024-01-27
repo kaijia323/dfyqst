@@ -64,7 +64,7 @@
     "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/博丽灵梦.png",
     "address": ["博丽神社"],
     "favorites": ["实惠", "饱腹", "不可思议"],
-    "hates": ["辣", "实惠"],
+    "hates": [],
     "drinks": ["无酒精", "低酒精", "可加热"],
     "money": [150, 300],
     "recipes": []
@@ -84,7 +84,7 @@
     "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/比那名居天子.png",
     "address": ["博丽神社"],
     "favorites": ["果味", "素", "清淡", "甜", "传说", "适合拍照"],
-    "hates": ["家常", "流行·喜爱"],
+    "hates": ["家常", "流行·喜爱", "肉"],
     "drinks": ["高酒精", "鸡尾酒"],
     "money": [2000, 3000],
     "recipes": []
