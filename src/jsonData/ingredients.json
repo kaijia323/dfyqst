@@ -277,5 +277,14 @@
     "price": 4,
     "tags": ["生"],
     "type": "其他"
+  },
+  {
+    "name": "和牛",
+    "describe": "人里供应的鸡蛋，较为常见",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食材/和牛.png",
+    "level": 5,
+    "price": 40,
+    "tags": ["肉", "传说", "高级"],
+    "type": "肉类"
   }
 ]
