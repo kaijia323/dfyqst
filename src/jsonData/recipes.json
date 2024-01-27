@@ -319,5 +319,17 @@
     "needIngredients": ["牛肉"],
     "needCook": "煮锅",
     "cookerTime": 4.9
+  },
+  {
+    "name": "温暖饭团",
+    "describe": "常见的平价饭团，内馅加入了尊鱼和洋葱，融合了海鲜的细腻口感与洋葱的炽热，无论是营养还是口感都属上佳。",
+    "image": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/食谱/温暖饭团.png",
+    "level": 3,
+    "price": 30,
+    "tags": ["水产", "素", "家常", "饱腹", "和风", "灼热"],
+    "excludeTags": [],
+    "needIngredients": ["洋葱", "鳟鱼"],
+    "needCook": "料理台",
+    "cookerTime": 5.6
   }
 ]
