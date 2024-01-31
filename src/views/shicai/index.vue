@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import ingredients from "@/jsonData/ingredients.json";
 import { sample } from "lodash-es";
+import { importImage } from "@/tools/importImage";
 
 type TIngredients = (typeof ingredients)[number];
 type IMapProp = {
@@ -40,7 +41,7 @@ const columns = Reflect.ownKeys(mapProps).map(key => ({
         :label="column.label"
       >
         <template v-if="column.prop === 'image'" #default="{ row }">
-          <el-avatar shape="square" :src="row.image" />
+          <el-avatar shape="square" :src="importImage(row.image)" />
         </template>
         <template v-if="column.prop === 'tags'" #default="{ row }">
           <el-space wrap>

@@ -5,6 +5,7 @@ import ingredients from "@/jsonData/ingredients.json";
 import { onMounted } from "vue";
 import { ref } from "vue";
 import { Sort } from "@element-plus/icons-vue";
+import { importImage } from "@/tools/importImage";
 
 type TRecipe = (typeof recipes)[number];
 type TCustomer = Omit<(typeof customerList)[number], "recipes"> & {
@@ -128,7 +129,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
         @click="handleChooseCustomer(customer)"
       >
         <el-space direction="vertical">
-          <el-avatar shape="square" :src="customer.avatar" />
+          <el-avatar shape="square" :src="importImage(customer.avatar)" />
           <div class="name">{{ customer.name }}</div>
         </el-space>
       </div>
@@ -152,7 +153,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
         <el-space class="item">
           <div class="label">姓名:</div>
           <div class="value">{{ customer.name }}</div>
-          <el-avatar :src="customer.avatar"></el-avatar>
+          <el-avatar :src="importImage(customer.avatar)"></el-avatar>
         </el-space>
         <br />
         <el-space class="item">
@@ -198,7 +199,10 @@ const handleChooseCustomer = (customer: TCustomer) => {
           >
             <el-space wrap>
               <el-space>
-                <el-avatar shape="square" :src="recipe.image"></el-avatar>
+                <el-avatar
+                  shape="square"
+                  :src="importImage(recipe.image)"
+                ></el-avatar>
                 <span>{{ recipe.name }}</span>
                 <span>￥{{ recipe.price }}</span>
               </el-space>
@@ -234,7 +238,11 @@ const handleChooseCustomer = (customer: TCustomer) => {
                   class="need-ingredient"
                 >
                   <el-avatar
-                    :src="ingredients.find(item => item.name === i)?.image"
+                    :src="
+                      importImage(
+                        ingredients.find(item => item.name === i)?.image
+                      )
+                    "
                     shape="square"
                     size="small"
                   ></el-avatar>
@@ -262,7 +270,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
                 >
                   <el-space>
                     <el-avatar
-                      :src="i.image"
+                      :src="importImage(i.image)"
                       shape="square"
                       size="small"
                     ></el-avatar>

@@ -1,7 +1,7 @@
 [
   {
     "name": "莉格露",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/莉格露.png",
+    "avatar": "/东方夜雀食堂/顾客/莉格露.png",
     "address": ["妖怪兽道"],
     "favorites": ["甜", "猎奇", "肉", "生"],
     "hates": ["素", "清淡", "凉爽"],
@@ -11,7 +11,7 @@
   },
   {
     "name": "露米娅",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/露米娅.png",
+    "avatar": "/东方夜雀食堂/顾客/露米娅.png",
     "address": ["妖怪兽道"],
     "favorites": ["饱腹", "招牌", "猎奇", "生", "肉", "流行", "喜爱"],
     "hates": ["下酒", "昂贵", "流行", "厌恶"],
@@ -21,7 +21,7 @@
   },
   {
     "name": "橙",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/橙.png",
+    "avatar": "/东方夜雀食堂/顾客/橙.png",
     "address": ["妖怪兽道"],
     "favorites": ["水产", "烧烤", "肉", "甜", "重油", "流行", "喜爱"],
     "hates": ["猎奇", "灼热", "素", "流行", "厌恶"],
@@ -31,7 +31,7 @@
   },
   {
     "name": "稗田阿求",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/稗田阿求.png",
+    "avatar": "/东方夜雀食堂/顾客/稗田阿求.png",
     "address": ["人间之里"],
     "favorites": ["高级", "甜", "清淡", "和风", "汤羹", "文化底蕴"],
     "hates": ["咸"],
@@ -41,7 +41,7 @@
   },
   {
     "name": "上白泽慧音",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/上白泽慧音.png",
+    "avatar": "/东方夜雀食堂/顾客/上白泽慧音.png",
     "address": ["人间之里"],
     "favorites": ["清淡", "素", "家常", "文化底蕴", "中华", "和风"],
     "hates": ["重油"],
@@ -51,7 +51,7 @@
   },
   {
     "name": "茨木华扇",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/茨木华扇.png",
+    "avatar": "/东方夜雀食堂/顾客/茨木华扇.png",
     "address": ["人间之里"],
     "favorites": ["文化底蕴", "和风", "家常", "下酒"],
     "hates": ["辣", "实惠"],
@@ -61,7 +61,7 @@
   },
   {
     "name": "博丽灵梦",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/博丽灵梦.png",
+    "avatar": "/东方夜雀食堂/顾客/博丽灵梦.png",
     "address": ["博丽神社"],
     "favorites": ["实惠", "饱腹", "不可思议"],
     "hates": [],
@@ -71,7 +71,7 @@
   },
   {
     "name": "伊吹萃香",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/伊吹萃香.png",
+    "avatar": "/东方夜雀食堂/顾客/伊吹萃香.png",
     "address": ["博丽神社"],
     "favorites": ["小巧", "力量涌现", "肉"],
     "hates": [],
@@ -81,7 +81,7 @@
   },
   {
     "name": "比那名居天子",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/比那名居天子.png",
+    "avatar": "/东方夜雀食堂/顾客/比那名居天子.png",
     "address": ["博丽神社"],
     "favorites": ["果味", "素", "清淡", "甜", "传说", "适合拍照"],
     "hates": ["家常", "流行·喜爱", "肉"],
@@ -91,7 +91,7 @@
   },
   {
     "name": "雾雨魔理沙",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/雾雨魔理沙.png",
+    "avatar": "/东方夜雀食堂/顾客/雾雨魔理沙.png",
     "address": ["妖怪兽道", "人间之里"],
     "favorites": ["和风", "重油", "菌类", "灼热", "传说"],
     "hates": ["猎奇"],
@@ -101,7 +101,7 @@
   },
   {
     "name": "森近霖之助",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/森近霖之助.png",
+    "avatar": "/东方夜雀食堂/顾客/森近霖之助.png",
     "address": ["人间之里"],
     "favorites": ["流行·喜爱", "家常", "饱腹", "鲜"],
     "hates": ["重油"],
@@ -111,7 +111,7 @@
   },
   {
     "name": "魂魄妖梦",
-    "avatar": "https://cdn.jsdelivr.net/gh/kaijia323/cdn_images/东方夜雀食堂/顾客/魂魄妖梦.png",
+    "avatar": "/东方夜雀食堂/顾客/魂魄妖梦.png",
     "address": [],
     "favorites": ["传说", "和风"],
     "hates": [],
