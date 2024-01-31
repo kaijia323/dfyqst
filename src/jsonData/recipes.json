@@ -355,5 +355,29 @@
     "needIngredients": ["猪肉"],
     "needCook": "油锅",
     "cookerTime": 5.6
+  },
+  {
+    "name": "蔬菜专辑",
+    "describe": "用新鲜的蔬菜生拌而成的沙拉，口感清新，可以去除嘴里的油腻。不知为何被年轻的姑娘们奉为减肥圣餐。",
+    "image": "/东方夜雀食堂/食谱/蔬菜专辑.png",
+    "level": 3,
+    "price": 56,
+    "tags": ["素", "清淡", "生", "凉爽"],
+    "excludeTags": ["肉", "水产", "灼热"],
+    "needIngredients": ["土豆", "洋葱", "南瓜"],
+    "needCook": "料理台",
+    "cookerTime": 3.5
+  },
+  {
+    "name": "杂炊",
+    "describe": "使用一些边角料食材杂烩而成的烩锅，享受美味的同时还能避免浪费，可谓一举两得。",
+    "image": "/东方夜雀食堂/食谱/杂炊.png",
+    "level": 2,
+    "price": 40,
+    "tags": ["肉", "家常", "鲜", "灼热"],
+    "excludeTags": [],
+    "needIngredients": ["海苔", "豆腐", "鳟鱼"],
+    "needCook": "煮锅",
+    "cookerTime": 3.5
   }
 ]
