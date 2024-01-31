@@ -38,23 +38,18 @@ const toSortedTags = (tags: string[], customer: TCustomer): string[] => {
   });
 };
 
-// 从食谱 tags 中过滤顾客讨厌的 tag 且包含顾客喜好的 tag
+// 从食谱 tags 中找到顾客喜好的 tag
 const filterRecipes = (customer: TCustomer): TRecipe[] => {
   return (
     recipes
-      .filter(
-        recipe =>
-          !recipe.tags.some(tag => customer.hates.includes(tag)) &&
-          recipe.tags.some(tag => customer.favorites.includes(tag))
+      .filter(recipe =>
+        // 顾客讨厌的 tag
+        // !recipe.tags.some(tag => customer.hates.includes(tag)) &&
+        recipe.tags.some(tag => customer.favorites.includes(tag))
       )
-      // 根据顾客喜好的 tag 数量排序
+      // 根据价格排序
       .toSorted((a, b) => {
-        const aa = a.tags.filter(tag => customer.favorites.includes(tag));
-        const bb = b.tags.filter(tag => customer.favorites.includes(tag));
-        if (aa.length === bb.length) {
-          return -(a.price - b.price);
-        }
-        return bb.length - aa.length;
+        return b.price - a.price;
       })
   );
 };
@@ -136,12 +131,13 @@ const handleChooseCustomer = (customer: TCustomer) => {
     </el-space>
   </div>
 
+  <!-- 
   <div class="sort">
     <el-space>
       <span>价格</span>
       <el-icon><Sort /></el-icon>
     </el-space>
-  </div>
+  </div> -->
 
   <template v-if="chooseCustomers.length">
     <div
@@ -211,7 +207,13 @@ const handleChooseCustomer = (customer: TCustomer) => {
               <el-space wrap>
                 <span>食谱 Tag:</span>
                 <el-tag
-                  :type="customer.favorites.includes(t) ? '' : 'info'"
+                  :type="
+                    customer.favorites.includes(t)
+                      ? ''
+                      : customer.hates.includes(t)
+                      ? 'danger'
+                      : 'info'
+                  "
                   v-for="t in toSortedTags(recipe.tags, customer)"
                   :key="t"
                 >
