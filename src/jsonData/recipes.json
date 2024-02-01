@@ -48,18 +48,6 @@
     "cookerTime": 3.5
   },
   {
-    "name": "能量串",
-    "describe": "牛肉搭配洋葱、南瓜烤成的串串。巧妙地利用了洋葱的刺激与南瓜的甜味去除肉质的油腻，食之更加清爽。",
-    "image": "/东方夜雀食堂/食谱/能量串.png",
-    "level": 3,
-    "price": 50,
-    "tags": ["肉", "饱腹", "烧烤"],
-    "excludeTags": [],
-    "needIngredients": [],
-    "needCook": "",
-    "cookerTime": 0
-  },
-  {
     "name": "饭团",
     "describe": "最普通的饭团，加点海带随便捏捏就可以了，超便捷的经典。",
     "image": "/东方夜雀食堂/食谱/饭团.png",
@@ -415,5 +403,17 @@
     "needIngredients": ["黑毛猪肉", "和牛", "河豚"],
     "needCook": "煮锅",
     "cookerTime": 6
+  },
+  {
+    "name": "能量串",
+    "describe": "牛肉搭配洋葱、南瓜烤成的串串。巧妙地利用了洋葱的刺激与南瓜的甜味去除肉质的油腻，食之更加清爽。",
+    "image": "/东方夜雀食堂/食谱/能量串.png",
+    "level": 3,
+    "price": 50,
+    "tags": ["肉", "饱腹", "烧烤"],
+    "excludeTags": [],
+    "needIngredients": ["牛肉", "洋葱", "南瓜"],
+    "needCook": "烤架",
+    "cookerTime": 7.2
   }
 ]
