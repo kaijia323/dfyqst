@@ -415,5 +415,41 @@
     "needIngredients": ["牛肉", "洋葱", "南瓜"],
     "needCook": "烤架",
     "cookerTime": 7.2
+  },
+  {
+    "name": "司康饼",
+    "describe": "英式下午茶的常客，外酥内软。一般蘸着果酱或者奶油起吃。",
+    "image": "/东方夜雀食堂/食谱/司康饼.png",
+    "level": 1,
+    "price": 8,
+    "tags": ["实惠", "饱腹", "西式"],
+    "excludeTags": [],
+    "needIngredients": ["黄油", "面粉"],
+    "needCook": "蒸锅",
+    "cookerTime": 4.2
+  },
+  {
+    "name": "香煎三文鱼",
+    "describe": "将整块带皮的三文鱼煎至外焦里嫩，配上鲜嫩的竹笋一一不过外界这个菜谱一般是芦笋，这也算是幻想乡式的融合菜吧。",
+    "image": "/东方夜雀食堂/食谱/香煎三文鱼.png",
+    "level": 3,
+    "price": 58,
+    "tags": ["肉", "西式", "鲜"],
+    "excludeTags": [],
+    "needIngredients": ["三文鱼", "竹笋"],
+    "needCook": "油锅",
+    "cookerTime": 6
+  },
+  {
+    "name": "热松饼",
+    "describe": "早餐的简单选择，将准备好的面糊煎熟，浇上蜂蜜就可以吃了。",
+    "image": "/东方夜雀食堂/食谱/热松饼.png",
+    "level": 2,
+    "price": 22,
+    "tags": ["饱腹", "西式", "甜"],
+    "excludeTags": [],
+    "needIngredients": ["蜂蜜", "鸡蛋", "面粉"],
+    "needCook": "油锅",
+    "cookerTime": 5.4
   }
 ]
