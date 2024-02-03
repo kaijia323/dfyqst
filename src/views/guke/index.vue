@@ -113,7 +113,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
 
 <template>
   <div class="guke">
-    <el-space>
+    <el-space wrap>
       <div
         :class="{
           customer: true,
