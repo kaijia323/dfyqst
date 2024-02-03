@@ -451,5 +451,17 @@
     "needIngredients": ["蜂蜜", "鸡蛋", "面粉"],
     "needCook": "油锅",
     "cookerTime": 5.4
+  },
+  {
+    "name": "北极甜虾蜜桃色拉",
+    "describe": "选用品质最好、肉质最鲜的虾和桃子加工而成的高级料理，据说在外界只有在宴席上才有机会一见。",
+    "image": "/东方夜雀食堂/食谱/北极甜虾蜜桃色拉.png",
+    "level": 2,
+    "price": 25,
+    "tags": ["水产", "素", "清淡", "甜", "适合拍照", "不可思议", "果味"],
+    "excludeTags": ["咸", "肉"],
+    "needIngredients": ["桃子", "冰块", "虾"],
+    "needCook": "料理台",
+    "cookerTime": 6
   }
 ]
