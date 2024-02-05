@@ -463,5 +463,29 @@
     "needIngredients": ["桃子", "冰块", "虾"],
     "needCook": "料理台",
     "cookerTime": 6
+  },
+  {
+    "name": "白雪",
+    "describe": "使用鲜美的八目鳗与河豚，再佐以海带炖煮而成的高级烩锅，由于煮的过程中会飘出纯白的泡沫而得名，是非常高级的家庭料理。",
+    "image": "/东方夜雀食堂/食谱/白雪.png",
+    "level": 4,
+    "price": 98,
+    "tags": ["昂贵", "肉", "水产", "高级", "和风", "文化底蕴"],
+    "excludeTags": [],
+    "needIngredients": ["河豚", "八目鳗", "海苔"],
+    "needCook": "煮锅",
+    "cookerTime": 7.2
+  },
+  {
+    "name": "野味加农",
+    "describe": "用农家蔬菜佐以优质黑毛猪肉炖煮的烩锅，口感饱满，香浓却不油腻，是农家人最高级的大菜。",
+    "image": "/东方夜雀食堂/食谱/野味加农.png",
+    "level": 4,
+    "price": 66,
+    "tags": ["昂贵", "肉", "重油", "饱腹", "山珍", "灼热"],
+    "excludeTags": [],
+    "needIngredients": ["土豆", "南瓜", "黑毛猪肉"],
+    "needCook": "煮锅",
+    "cookerTime": 4.8
   }
 ]
