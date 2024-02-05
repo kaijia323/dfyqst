@@ -4,6 +4,10 @@
     "@vue/tsconfig/tsconfig.json"
   ],
   "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "types": [
       "node"
     ],

@@ -4,8 +4,21 @@ import {
   Fold as IconFold,
   Expand as IconExpand,
 } from "@element-plus/icons-vue";
+import { useRectStore } from "@/pinia";
 
 const isCollapse = ref(true);
+const rectStore = useRectStore();
+
+onMounted(() => {
+  const appEl = document.querySelector("#app")!;
+  rectStore.$patch({
+    rect: {
+      width: appEl.clientWidth - 40,
+      height: appEl.clientHeight - 40,
+    },
+  });
+});
+
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
@@ -57,18 +70,30 @@ const handleClose = (key: string, keyPath: string[]) => {
           </el-menu-item>
         </el-menu>
       </el-aside>
-      <el-main><router-view></router-view></el-main>
+      <el-scrollbar>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+      </el-scrollbar>
     </el-container>
   </div>
 </template>
 
 <style scoped lang="scss">
-.collapse {
-  display: flex;
-  justify-content: end;
-  padding: 16px;
-  > .el-icon {
-    cursor: pointer;
+.layout {
+  width: 100%;
+  height: 100%;
+  > .el-container {
+    width: 100%;
+    height: 100%;
+  }
+  .collapse {
+    display: flex;
+    justify-content: end;
+    padding: 16px;
+    > .el-icon {
+      cursor: pointer;
+    }
   }
 }
 </style>
