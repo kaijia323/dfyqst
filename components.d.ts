@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    DfGrid: typeof import('./src/components/df-grid.vue')['default']
     DfLabel: typeof import('./src/components/df-label.vue')['default']
     DfTags: typeof import('./src/components/df-tags.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']

@@ -137,7 +137,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
     </div>
 
     <template v-if="chooseCustomers.length">
-      <el-scrollbar :height="rectStore.height">
+      <el-scrollbar style="width: 100%" :height="rectStore.height">
         <div
           class="customer-info"
           v-for="customer in chooseCustomers"
@@ -173,7 +173,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
                 :key="recipe.name"
                 class="recipe"
               >
-                <el-space wrap>
+                <el-space direction="vertical" alignment="start">
                   <el-space>
                     <el-avatar
                       shape="square"
@@ -181,42 +181,30 @@ const handleChooseCustomer = (customer: TCustomer) => {
                     ></el-avatar>
                     <span>{{ recipe.name }}</span>
                     <span>￥{{ recipe.price }}</span>
+                    <span> Lv{{ recipe.level }}</span>
                   </el-space>
-                  <div style="height: 8px"></div>
                   <!-- 食谱标签 -->
-                  <el-space wrap>
-                    <span>食谱 Tag:</span>
-                    <el-tag
-                      :type="
-                        customer.favorites.includes(t)
+                  <df-label title="标签">
+                    <df-tags
+                      :colorCb="
+                        (t: string) => customer.favorites.includes(t)
                           ? ''
                           : customer.hates.includes(t)
                           ? 'danger'
                           : 'info'
                       "
-                      v-for="t in toSortedTags(recipe.tags, customer)"
-                      :key="t"
-                    >
-                      {{ t }}
-                    </el-tag>
-                  </el-space>
-                  <div style="height: 8px"></div>
+                      :tags="toSortedTags(recipe.tags, customer)"
+                    ></df-tags>
+                  </df-label>
                   <!-- 食谱不能包含的标签 -->
-                  <el-space>
-                    <span>不能搭配的食材 Tag:</span>
-                    <el-tag
-                      type="danger"
-                      v-for="t in recipe.excludeTags"
-                      :key="t"
-                    >
-                      {{ t }}
-                    </el-tag>
-                    <span v-if="!recipe.excludeTags.length">无</span>
-                  </el-space>
+                  <df-label title="不能搭配的食材 Tag">
+                    <df-tags
+                      color="danger"
+                      :tags="recipe.excludeTags"
+                    ></df-tags>
+                  </df-label>
                 </el-space>
-                <div style="height: 8px"></div>
-                <el-space>
-                  <span>食材:</span>
+                <df-label title="食材">
                   <el-space>
                     <div
                       v-for="i in recipe.needIngredients"
@@ -235,66 +223,35 @@ const handleChooseCustomer = (customer: TCustomer) => {
                       <span>{{ i }}</span>
                     </div>
                   </el-space>
-                  <span>厨具:</span>
-                  <el-space>
-                    <!-- <el-avatar
-                      :src="ingredients.find(item => item.name === i)?.image"
-                      shape="square"
-                      size="small"
-                    ></el-avatar> -->
-                    <span>{{ recipe.needCook }}</span>
-                  </el-space>
-                </el-space>
+                </df-label>
+                <div style="height: 8px"></div>
+                <df-label title="厨具">
+                  {{ recipe.needCook }}
+                </df-label>
+                <div style="height: 8px"></div>
+                <div>可添加的食材:</div>
                 <div style="height: 8px"></div>
                 <el-space direction="vertical" alignment="start">
-                  <span>可添加的食材</span>
-                  <el-space wrap>
-                    <div
-                      v-for="i in cantAddIngredient(recipe, customer)"
-                      :key="i.name"
-                      class="need-ingredient"
-                    >
-                      <el-space>
-                        <el-avatar
-                          :src="importImage(i.image)"
-                          shape="square"
-                          size="small"
-                        ></el-avatar>
-                        <span>{{ i.name }}</span>
-                        <span>￥{{ i.price }}</span>
-                        <el-tag
-                          :type="customer.favorites.includes(t) ? '' : 'info'"
-                          v-for="t in toSortedTags(i.tags, customer)"
-                          :key="t"
-                        >
-                          {{ t }}
-                        </el-tag>
-                      </el-space>
-                    </div>
-                  </el-space>
-                </el-space>
-                <div style="height: 8px"></div>
-                <el-space direction="vertical" alignment="start">
-                  <span>推荐添加食材</span>
-                  <!-- <el-space wrap>
                   <div
-                    v-for="i in recommendAddIngredient(recipe, customer)"
+                    v-for="i in cantAddIngredient(recipe, customer)"
                     :key="i.name"
-                    class="recommend-ingredient"
+                    class="need-ingredient"
                   >
-                    <el-space>
+                    <el-space wrap>
                       <el-avatar
-                        :src="i.image"
+                        :src="importImage(i.image)"
                         shape="square"
                         size="small"
                       ></el-avatar>
                       <span>{{ i.name }}</span>
-                      <el-tag v-for="t in i.tags" :key="t">
-                        {{ t }}
-                      </el-tag>
+                      <span>￥{{ i.price }}</span>
+                      <df-tags
+                        :colorCb="(t: string) => customer.favorites.includes(t) ? '' : 'info'"
+                        :tags="toSortedTags(i.tags, customer)"
+                      >
+                      </df-tags>
                     </el-space>
                   </div>
-                </el-space> -->
                 </el-space>
               </div>
             </div>
@@ -307,6 +264,7 @@ const handleChooseCustomer = (customer: TCustomer) => {
 
 <style lang="scss" scoped>
 .customer {
+  width: 100%;
   display: flex;
   flex-direction: row-reverse;
   .customer-list {
@@ -342,7 +300,8 @@ const handleChooseCustomer = (customer: TCustomer) => {
     // width: fit-content;
     border-radius: 8px;
     .person {
-      position: relative;
+      position: sticky;
+      top: 0;
       padding: 16px;
       &::before {
         display: block;
@@ -371,7 +330,8 @@ const handleChooseCustomer = (customer: TCustomer) => {
       .recipe {
         padding: 16px;
         margin-bottom: 8px;
-        width: fit-content;
+        // width: fit-content;
+        width: 100%;
         border-radius: 8px;
         box-shadow: 0 0 0px 2px #ebe7e7;
         &:last-child {

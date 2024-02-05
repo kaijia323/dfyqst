@@ -70,11 +70,11 @@ const handleClose = (key: string, keyPath: string[]) => {
           </el-menu-item>
         </el-menu>
       </el-aside>
-      <el-scrollbar>
-        <el-main>
+      <el-main>
+        <el-scrollbar>
           <router-view></router-view>
-        </el-main>
-      </el-scrollbar>
+        </el-scrollbar>
+      </el-main>
     </el-container>
   </div>
 </template>
