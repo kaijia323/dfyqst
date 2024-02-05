@@ -14,43 +14,38 @@ type TCustomer = Omit<(typeof customerList)[number], "recipes"> & {
 type TIngredient = (typeof ingredients)[number];
 
 const rectStore = useRectStore();
-const isMulti = ref(false);
-const chooseCustomers = ref<TCustomer[]>([]);
 const cacheAddIngredients: { [key: string]: TIngredient[] } = {};
 const personAvatar = computed(
-  () => `url("${importImage(chooseCustomers.value[0]?.avatar)}")`
+  () => `url("${importImage(customer.value.avatar)}")`
 );
+const customer = ref<TCustomer>(customerList[0]);
 
 onMounted(() => {
-  if (isMulti.value) {
-    chooseCustomers.value = [...customerList].map(item => {
-      return {
-        ...item,
-        recipes: filterRecipes(item),
-      };
-    });
-  } else {
-    chooseCustomers.value = [customerList[0]];
-  }
+  handleChooseCustomer(customerList[0]);
 });
 
 // 根据顾客喜好的 tag 排序
-const toSortedTags = (tags: string[], customer: TCustomer): string[] => {
+const toSortedTags = (tags: string[], _: TCustomer): string[] => {
   return tags.toSorted((a, b) => {
-    if (customer.favorites.includes(a)) return -1;
+    if (customer.value.favorites.includes(a)) return -1;
     return 1;
   });
 };
 
 // 从食谱 tags 中找到顾客喜好的 tag
-const filterRecipes = (customer: TCustomer): TRecipe[] => {
+const filterRecipes = (
+  _customer: TCustomer,
+  filterTag: string = ""
+): TRecipe[] => {
   return (
     recipes
-      .filter(recipe =>
-        // 顾客讨厌的 tag
-        // !recipe.tags.some(tag => customer.hates.includes(tag)) &&
-        recipe.tags.some(tag => customer.favorites.includes(tag))
-      )
+      .filter(recipe => {
+        const tag = filterTag ? recipe.tags.includes(filterTag) : true;
+        const favorite = recipe.tags.some(tag =>
+          _customer.favorites.includes(tag)
+        );
+        return tag && favorite;
+      })
       // 根据价格排序
       .toSorted((a, b) => {
         return b.price - a.price;
@@ -59,24 +54,21 @@ const filterRecipes = (customer: TCustomer): TRecipe[] => {
 };
 
 // 顾客食谱可添加的食材
-const cantAddIngredient = (
-  recipe: TRecipe,
-  customer: TCustomer
-): TIngredient[] => {
-  const k = `${customer.name}-${recipe.name}`;
+const cantAddIngredient = (recipe: TRecipe, _: TCustomer): TIngredient[] => {
+  const k = `${customer.value.name}-${recipe.name}`;
   if (cacheAddIngredients[k]) {
     return cacheAddIngredients[k];
   }
   const res = ingredients
     .filter(
       ingredient =>
-        !ingredient.tags.some(item => customer.hates.includes(item)) &&
+        !ingredient.tags.some(item => customer.value.hates.includes(item)) &&
         !recipe.excludeTags.some(item => ingredient.tags.includes(item)) &&
-        ingredient.tags.some(item => customer.favorites.includes(item)) &&
+        ingredient.tags.some(item => customer.value.favorites.includes(item)) &&
         ingredient.tags.every(
           item =>
             !recipe.tags
-              .filter(re => customer.favorites.includes(re))
+              .filter(re => customer.value.favorites.includes(re))
               .includes(item)
         )
     )
@@ -87,31 +79,15 @@ const cantAddIngredient = (
   return res;
 };
 
-// 推荐添加的食材
-const recommendAddIngredient = (
-  recipe: TRecipe,
-  customer: TCustomer
-): TIngredient[] => {
-  const res = cantAddIngredient(recipe, customer);
-  return res;
+const handleChooseCustomer = (_customer: TCustomer) => {
+  customer.value = {
+    ..._customer,
+    recipes: filterRecipes(_customer),
+  };
 };
 
-const handleChooseCustomer = (customer: TCustomer) => {
-  if (isMulti.value) {
-    const index = chooseCustomers.value.findIndex(
-      item => item.name === customer.name
-    );
-    if (index > -1) {
-      chooseCustomers.value.splice(index, 1);
-    } else {
-      chooseCustomers.value.push({
-        ...customer,
-        recipes: filterRecipes(customer),
-      });
-    }
-  } else {
-    chooseCustomers.value.splice(0, 1, customer);
-  }
+const handleFavorite = (t: string) => {
+  customer.value.recipes = filterRecipes(customer.value, t);
 };
 </script>
 
@@ -122,143 +98,138 @@ const handleChooseCustomer = (customer: TCustomer) => {
         <div
           :class="{
             item: true,
-            active: chooseCustomers.find(item => item.name === customer.name),
+            active: c.name === customer.name,
           }"
-          v-for="customer in customerList"
-          :key="customer.name"
-          @click="handleChooseCustomer(customer)"
+          v-for="c in customerList"
+          :key="c.name"
+          @click="handleChooseCustomer(c)"
         >
           <el-space direction="vertical">
-            <el-avatar shape="square" :src="importImage(customer.avatar)" />
-            <div class="name">{{ customer.name }}</div>
+            <el-avatar shape="square" :src="importImage(c.avatar)" />
+            <div class="name">{{ c.name }}</div>
           </el-space>
         </div>
       </el-scrollbar>
     </div>
 
-    <template v-if="chooseCustomers.length">
-      <el-scrollbar style="width: 100%" :height="rectStore.height">
-        <div
-          class="customer-info"
-          v-for="customer in chooseCustomers"
-          :key="customer.name"
-        >
-          <div class="person">
-            <el-space alignment="start" direction="vertical">
-              <df-label title="姓名">
-                {{ customer.name }}
-              </df-label>
-              <df-label title="地址">
-                {{ customer.address.join(", ") }}
-              </df-label>
-              <df-label title="喜好">
-                <df-tags :tags="customer.favorites"></df-tags>
-              </df-label>
-              <df-label title="讨厌">
-                <df-tags :tags="customer.hates" color="danger"></df-tags>
-              </df-label>
-              <df-label title="饮料/酒水">
-                <df-tags :tags="customer.drinks"></df-tags>
-              </df-label>
-              <df-label title="钱">
-                {{ customer.money.join("-") }}
-              </df-label>
-            </el-space>
-          </div>
-          <div class="item" style="margin-top: 8px">
-            <div class="label" style="margin-bottom: 8px">食谱</div>
-            <div class="value">
-              <div
-                v-for="recipe in filterRecipes(customer)"
-                :key="recipe.name"
-                class="recipe"
-              >
-                <el-space direction="vertical" alignment="start">
-                  <el-space>
-                    <el-avatar
-                      shape="square"
-                      :src="importImage(recipe.image)"
-                    ></el-avatar>
-                    <span>{{ recipe.name }}</span>
-                    <span>￥{{ recipe.price }}</span>
-                    <span> Lv{{ recipe.level }}</span>
-                  </el-space>
-                  <!-- 食谱标签 -->
-                  <df-label title="标签">
-                    <df-tags
-                      :colorCb="
+    <el-scrollbar style="width: 100%" :height="rectStore.height">
+      <div class="customer-info">
+        <div class="person">
+          <el-space alignment="start" direction="vertical">
+            <df-label title="姓名">
+              {{ customer.name }}
+            </df-label>
+            <df-label title="地址">
+              {{ customer.address.join(", ") }}
+            </df-label>
+            <df-label title="喜好">
+              <df-tags
+                pointer
+                :tags="customer.favorites"
+                @click="handleFavorite"
+              ></df-tags>
+            </df-label>
+            <df-label title="讨厌">
+              <df-tags :tags="customer.hates" color="danger"></df-tags>
+            </df-label>
+            <df-label title="饮料/酒水">
+              <df-tags :tags="customer.drinks"></df-tags>
+            </df-label>
+            <df-label title="钱">
+              {{ customer.money.join("-") }}
+            </df-label>
+          </el-space>
+        </div>
+        <div class="item" style="margin-top: 8px">
+          <div class="label" style="margin-bottom: 8px">食谱</div>
+          <div class="value">
+            <div
+              v-for="recipe in customer.recipes"
+              :key="recipe.name"
+              class="recipe"
+            >
+              <el-space direction="vertical" alignment="start">
+                <el-space>
+                  <el-avatar
+                    shape="square"
+                    :src="importImage(recipe.image)"
+                  ></el-avatar>
+                  <span>{{ recipe.name }}</span>
+                  <span>￥{{ recipe.price }}</span>
+                  <span> Lv{{ recipe.level }}</span>
+                </el-space>
+                <!-- 食谱标签 -->
+                <df-label title="标签">
+                  <df-tags
+                    :colorCb="
                         (t: string) => customer.favorites.includes(t)
                           ? ''
                           : customer.hates.includes(t)
                           ? 'danger'
                           : 'info'
                       "
-                      :tags="toSortedTags(recipe.tags, customer)"
-                    ></df-tags>
-                  </df-label>
-                  <!-- 食谱不能包含的标签 -->
-                  <df-label title="不能搭配的食材 Tag">
-                    <df-tags
-                      color="danger"
-                      :tags="recipe.excludeTags"
-                    ></df-tags>
-                  </df-label>
-                </el-space>
-                <df-label title="食材">
-                  <el-space>
-                    <div
-                      v-for="i in recipe.needIngredients"
-                      :key="i"
-                      class="need-ingredient"
-                    >
-                      <el-avatar
-                        :src="
-                          importImage(
-                            ingredients.find(item => item.name === i)?.image
-                          )
-                        "
-                        shape="square"
-                        size="small"
-                      ></el-avatar>
-                      <span>{{ i }}</span>
-                    </div>
-                  </el-space>
+                    :tags="toSortedTags(recipe.tags, customer)"
+                  ></df-tags>
                 </df-label>
-                <div style="height: 8px"></div>
-                <df-label title="厨具">
-                  {{ recipe.needCook }}
+                <!-- 食谱不能包含的标签 -->
+                <df-label title="不能搭配的食材 Tag">
+                  <df-tags color="danger" :tags="recipe.excludeTags"></df-tags>
                 </df-label>
-                <div style="height: 8px"></div>
-                <div>可添加的食材:</div>
-                <div style="height: 8px"></div>
-                <el-space direction="vertical" alignment="start">
+              </el-space>
+              <df-label title="食材">
+                <el-space>
                   <div
-                    v-for="i in cantAddIngredient(recipe, customer)"
-                    :key="i.name"
+                    v-for="i in recipe.needIngredients"
+                    :key="i"
                     class="need-ingredient"
                   >
-                    <el-space wrap>
-                      <el-avatar
-                        :src="importImage(i.image)"
-                        shape="square"
-                        size="small"
-                      ></el-avatar>
-                      <span>{{ i.name }}</span>
-                      <span>￥{{ i.price }}</span>
-                      <df-tags
-                        :colorCb="(t: string) => customer.favorites.includes(t) ? '' : 'info'"
-                        :tags="toSortedTags(i.tags, customer)"
-                      >
-                      </df-tags>
-                    </el-space>
+                    <el-avatar
+                      :src="
+                        importImage(
+                          ingredients.find(item => item.name === i)?.image
+                        )
+                      "
+                      shape="square"
+                      size="small"
+                    ></el-avatar>
+                    <span>{{ i }}</span>
                   </div>
                 </el-space>
-              </div>
+              </df-label>
+              <div style="height: 8px"></div>
+              <df-label title="厨具">
+                {{ recipe.needCook }}
+              </df-label>
+              <div style="height: 8px"></div>
+              <div>可添加的食材:</div>
+              <div style="height: 8px"></div>
+              <el-space direction="vertical" alignment="start">
+                <div
+                  v-for="i in cantAddIngredient(recipe, customer)"
+                  :key="i.name"
+                  class="need-ingredient"
+                >
+                  <el-space wrap>
+                    <el-avatar
+                      :src="importImage(i.image)"
+                      shape="square"
+                      size="small"
+                    ></el-avatar>
+                    <span>{{ i.name }}</span>
+                    <span>￥{{ i.price }}</span>
+                    <df-tags
+                      :colorCb="(t: string) => customer.favorites.includes(t) ? '' : 'info'"
+                      :tags="toSortedTags(i.tags, customer)"
+                    >
+                    </df-tags>
+                  </el-space>
+                </div>
+              </el-space>
             </div>
           </div>
         </div>
-      </el-scrollbar>
-    </template>
+      </div>
+    </el-scrollbar>
   </div>
 </template>
 
