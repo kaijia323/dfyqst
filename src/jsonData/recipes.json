@@ -487,5 +487,41 @@
     "needIngredients": ["土豆", "南瓜", "黑毛猪肉"],
     "needCook": "煮锅",
     "cookerTime": 4.8
+  },
+  {
+    "name": "黄油牛排",
+    "describe": "简单而复杂，根据火候和食材的选择，呈现出不同感觉的基础西餐。顺带一提红魔馆的那位喜欢的是三分熟。",
+    "image": "/东方夜雀食堂/食谱/黄油牛排.png",
+    "level": 2,
+    "price": 60,
+    "tags": ["肉", "重油", "饱腹", "西式"],
+    "excludeTags": ["甜", "凉爽"],
+    "needIngredients": ["和牛", "黄油"],
+    "needCook": "油锅",
+    "cookerTime": 4.2
+  },
+  {
+    "name": "红烧鳗鱼",
+    "describe": "本店招牌。将鳗鱼用特殊酱料进行烧制后肉汁四溢，光闻着香味便让人垂涎不已。",
+    "image": "/东方夜雀食堂/食谱/红烧鳗鱼.png",
+    "level": 3,
+    "price": 42,
+    "tags": ["水产", "素", "重油", "鲜", "招牌"],
+    "excludeTags": [],
+    "needIngredients": ["洋葱", "八目鳗"],
+    "needCook": "油锅",
+    "cookerTime": 4.8
+  },
+  {
+    "name": "樱落雪",
+    "describe": "高级寿司的一种，粉红色的高级生鱼片盖在白米饭上，就如樱花飘落在白雪上，有着不可思议的美感。",
+    "image": "/东方夜雀食堂/食谱/樱落雪.png",
+    "level": 4,
+    "price": 50,
+    "tags": ["水产", "高级", "海味", "和风", "生", "适合拍照", "小巧"],
+    "excludeTags": ["重油"],
+    "needIngredients": ["极上金枪鱼"],
+    "needCook": "料理台",
+    "cookerTime": 7.2
   }
 ]
