@@ -523,5 +523,17 @@
     "needIngredients": ["极上金枪鱼"],
     "needCook": "料理台",
     "cookerTime": 7.2
+  },
+  {
+    "name": "班尼迪克蛋",
+    "describe": "流黄的水波蛋和大口的碳水，是早午餐的常见选择。",
+    "image": "/东方夜雀食堂/食谱/班尼迪克蛋.png",
+    "level": 2,
+    "price": 35,
+    "tags": ["饱腹", "西式", "生", "小巧"],
+    "excludeTags": ["甜", "果味"],
+    "needIngredients": ["鸡蛋", "竹笋", "黄油", "面粉"],
+    "needCook": "油锅",
+    "cookerTime": 4.2
   }
 ]
