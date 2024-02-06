@@ -165,5 +165,15 @@
     "drinks": ["直饮"],
     "money": [],
     "recipes": []
+  },
+  {
+    "name": "蕾米莉亚",
+    "avatar": "/东方夜雀食堂/顾客/蕾米莉亚.png",
+    "address": [],
+    "favorites": ["西式", "生"],
+    "hates": [],
+    "drinks": [],
+    "money": [],
+    "recipes": []
   }
 ]
