@@ -535,5 +535,17 @@
     "needIngredients": ["鸡蛋", "竹笋", "黄油", "面粉"],
     "needCook": "油锅",
     "cookerTime": 4.2
+  },
+  {
+    "name": "真·海鲜味增汤",
+    "describe": "选用新鲜鳟鱼与海带煲煮而成的味增汤，浓浓的鲜味四处漂荡，鲜而不腥。",
+    "image": "/东方夜雀食堂/食谱/真·海鲜味增汤.png",
+    "level": 2,
+    "price": 55,
+    "tags": ["水产", "家常", "清淡", "汤羹", "流行·喜爱"],
+    "excludeTags": [],
+    "needIngredients": ["三文鱼", "鳟鱼"],
+    "needCook": "煮锅",
+    "cookerTime": 4.8
   }
 ]
